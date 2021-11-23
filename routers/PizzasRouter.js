@@ -9,6 +9,7 @@ const router = express.Router();
 
 //definir rotas às quais ele responde
 router.get('/pizzas', PizzasController.listar)
+router.get('/pizzas/:id', PizzasController.getPizza);
 
 // exportar o roteador
 module.exports = router
