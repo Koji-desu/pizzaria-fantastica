@@ -10,7 +10,9 @@ const controller = {
      const id = req.params.id
 
      //capturar do array a pizza com o id requisitado (pizzas.find)
-     const pizza = pizzas.find(p=> p.id == id)
+     const pizza = pizzas.find(
+      p=> p.id == id
+      );
 
      //retornar a pizza encontrada para o client (req.send())
      res.render('pizza', {pizza})

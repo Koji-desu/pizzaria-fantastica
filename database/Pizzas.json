@@ -53,10 +53,10 @@
         "nome": "Portuguesa",
         "ingredientes": [
             "cebola",
-            "pimentão",
-            "ovo",
-            "mussarela",
-            "presunto"
+            " pimentão",
+            " ovo",
+            " mussarela",
+            " presunto"
         ],
         "preco": 40.5,
         "img": "/img/quatroqueijos.jpg",

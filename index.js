@@ -11,6 +11,9 @@ const app = express()
 app.set("view engine","ejs");
 app.set('views', './views')
 
+//configurar a pasta public
+app.use(express.static(__dirname + '/public'))
+
 //criar a rota respondendo a requisição
 app.use('/', PizzasRouter)
 
