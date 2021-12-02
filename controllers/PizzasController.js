@@ -20,10 +20,14 @@ const controller = {
     
     busca: (req, res)=>{
         // Capturar a string digitada pelo visitante
-
+        const string = req.query.q.trim();
         // Filtrar do array de pizzas somente as pizzas que satisfazerem a busca
+        const pizzasFiltras = pizzas.filter(
+            p => p.nome.toUpperCase().includes(string.toUpperCase())
+        );
         
         // Renderizar a view index passando para ela as pizzas filtradas
+        res.render('index', {pizzas:pizzasFiltras, busca:string})
     }
 }
 
