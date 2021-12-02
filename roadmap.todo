@@ -8,4 +8,5 @@ Passo 1 - Exibindo o formulário:
     ☐ Importe o PizzasController no AdmRouter.js
     ☐ Faça a rota get para '/adm/pizzas/create' direcionar a requisição para PizzasController.create
     ☐ Faça o PizzasController.create retornar a view crud-pizzas/create.ejs
-h
+
+

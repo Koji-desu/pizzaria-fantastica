@@ -28,6 +28,9 @@ const controller = {
         
         // Renderizar a view index passando para ela as pizzas filtradas
         res.render('index', {pizzas:pizzasFiltras, busca:string})
+    },
+    create: (req, res)=>{
+        res.render('crud-pizzas/create')
     }
 }
 
