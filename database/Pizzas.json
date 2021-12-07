@@ -123,5 +123,16 @@
         "preco": 38.5,
         "img": "/img/quatroqueijos.jpg",
         "destaque": true
+    },
+    {
+        "nome": "Vinicius",
+        "ingredientes": [
+            "Queijo",
+            "Rucula",
+            "Palmito"
+        ],
+        "preco": 333,
+        "img": "",
+        "id": 13
     }
 ]
