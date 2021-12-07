@@ -37,7 +37,8 @@ const controller = {
         const nome = req.body.nome;
         const ingredientes = req.body.ingredientes.split(',').map(a=> a.trim());
         const preco = Number(req.body.preco)
-        const pizza = {nome, ingredientes, preco, img:""}
+        const img = req.file.filename
+        const pizza = {nome, ingredientes, preco, img: '/img/' + img}
 
 
         // Adicionar o id à pizza recém criada

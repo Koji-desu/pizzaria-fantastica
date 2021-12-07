@@ -2,7 +2,18 @@ const express = require('express')
 const router = express.Router()
 const PizzaController = require('../controllers/PizzasController')
 
+const multer = require('multer')
+const storage = multer.diskStorage(
+    {   
+        destination: (req, fille, cb) => {cb(null, __dirname + '/../public/img')},
+        filename: (req, file, cb) => {cb(null, Date.now() + '-' + file.originalname)}
+        
+    }
+);
+
+const upload = multer({storage})
+
 router.get('/pizzas/create', PizzaController.create)
-router.post('/pizzas/create', PizzaController.store)
+router.post('/pizzas/create', upload.single('img'), PizzaController.store)
 
 module.exports = router

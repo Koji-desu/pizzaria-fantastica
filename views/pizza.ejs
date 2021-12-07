@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="/css/pizza.css">
 	<main>
 		<h1><%= pizza.nome %></h1>
-		<h2><%= pizza.preco%>$</h2>
+		<h2><%= pizza.preco.toLocaleString('pt-br', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) %></h2>
 		<img src="<%= pizza.img %>" alt="Foto da Pizza">
 		<div> Ingredientes: <%= pizza.ingredientes %></div>
 		<button>+ Add</button>

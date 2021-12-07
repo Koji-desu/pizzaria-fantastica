@@ -134,5 +134,15 @@
         "preco": 333,
         "img": "",
         "id": 13
+    },
+    {
+        "nome": "Elvis",
+        "ingredientes": [
+            "Mussarela",
+            "Molho de tomate"
+        ],
+        "preco": 30,
+        "img": "/img/1638887056005-kwXUEmj4_400x400.jpg",
+        "id": 14
     }
 ]
