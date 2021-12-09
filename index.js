@@ -6,6 +6,9 @@ const PizzasRouter = require('./routers/PizzasRouter')
 const AdmRouter = require('./routers/AdmRouter');
 const { json } = require('express');
 
+// Importando Middleware
+const logMiddleware = require('./middlewares/LogMIddleware')
+
 //criar o servidor
 const app = express()
 
@@ -16,6 +19,9 @@ app.set('views', './views')
 // Configurando o processamento de formulários
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+
+// Middleware de LOG:
+app.use(logMiddleware);
 
 //configurar a pasta public
 app.use(express.static(__dirname + '/public'))
