@@ -1,5 +1,6 @@
 const fs = require('fs')
 const pizzas = require('../database/Pizzas.json')
+const {validationResult} = require('express-validator')
 const controller = {
     listar: (req, res)=>{
       return  res.render('index', {pizzas, busca:""});
@@ -34,6 +35,12 @@ const controller = {
         res.render('crud-pizzas/create')
     },
     store: (req,res)=>{
+
+        const erros = validationResult(req);
+        if(!erros.isEmpty()){
+            return res.render('crud-pizzas/create', {erros: erros.mapped()})
+        }
+
         const nome = req.body.nome;
         const ingredientes = req.body.ingredientes.split(',').map(a=> a.trim());
         const preco = Number(req.body.preco)

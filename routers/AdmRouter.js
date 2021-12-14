@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const PizzaController = require('../controllers/PizzasController')
+const validarFormPizza = require('../middlewares/ValidadorDeForm')
 
 const multer = require('multer')
 const storage = multer.diskStorage(
@@ -14,6 +15,6 @@ const storage = multer.diskStorage(
 const upload = multer({storage})
 
 router.get('/pizzas/create', PizzaController.create)
-router.post('/pizzas/create', upload.single('img'), PizzaController.store)
+router.post('/pizzas/create', upload.single('img'), validarFormPizza, PizzaController.store)
 
 module.exports = router
