@@ -1,5 +1,6 @@
 //importando express   
 const express = require('express')
+const session = require('express-session')
 
 //importando os roteadores
 const PizzasRouter = require('./routers/PizzasRouter')
@@ -19,6 +20,9 @@ app.set('views', './views')
 // Configurando o processamento de formulários
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+
+// Middleware global
+app.use(session({secret:"SEGREDO"}));
 
 // Middleware de LOG:
 app.use(logMiddleware);

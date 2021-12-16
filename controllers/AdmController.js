@@ -16,9 +16,13 @@ const controller = {
             return res.send("email ou senha incorreto, tente novamente")
         }
 
-        // Se chegou até aqui, manda uma mensagem de sucesso.
+        // Se chegou até aqui, escreva a session do usuario
         
-            return res.send('sucesso!')
+            req.session.usuario = usuario;
+
+            // redirecionar o usuario para uma pagina interna
+
+            return res.redirect('/adm/pizzas/create')
     }
     
 }
