@@ -23,6 +23,10 @@ const controller = {
             // redirecionar o usuario para uma pagina interna
 
             return res.redirect('/adm/pizzas/create')
+    },
+    logout: (req,res)=>{
+        req.session.usuario = undefined
+        return res.redirect('/adm/login')
     }
     
 }

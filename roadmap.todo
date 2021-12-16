@@ -10,3 +10,10 @@ Passo 1 - Exibindo o formulário:
     ☐ Faça o PizzasController.create retornar a view crud-pizzas/create.ejs
 
 
+
+
+
+    Passo 3:  Fazer o Logout: 
+        Criar uma rota GET /adm/logout que direcione o req para um controller AdmController.logout
+        Criar o controller AdmController.logout
+        Fazer com que o AdmController.logou set a session.usuario como undefined e direcione o usuario para a tela de login
