@@ -1,4 +1,6 @@
 const usuarios = require('../database/Usuarios.json')
+const { check, validationResult, body} = require('express-validator')
+const res = require('express/lib/response')
 
 const controller = {
     showLogin: (req, res)=> {
@@ -27,6 +29,26 @@ const controller = {
     logout: (req,res)=>{
         req.session.usuario = undefined
         return res.redirect('/adm/login')
+    },
+
+    showCadastro: (req,res)=>{
+        res.render('criarConta')
+    },
+
+    cadastro: (req,res)=>{    
+        
+        
+
+        cadastro: (req, res) =>{
+        let erros = validationResult(req)
+
+        if (erros.isEmpty()){
+           return res.redirect('/adm/login')
+        } else {
+            res.render('criarConta', {erros: erros.mapped(), old: req.body})
+        }
+     }
+    
     }
     
 }

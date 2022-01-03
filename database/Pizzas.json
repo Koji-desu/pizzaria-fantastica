@@ -143,5 +143,14 @@
         "preco": 0,
         "img": "/img/1639058393011-kwXUEmj4_400x400.jpg",
         "id": 14
+    },
+    {
+        "nome": "11",
+        "ingredientes": [
+            "33"
+        ],
+        "preco": 4,
+        "img": "/img/1641214867866-FEzdijDXEAQfV8_.jpg",
+        "id": 15
     }
 ]

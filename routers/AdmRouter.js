@@ -7,6 +7,7 @@ const AdmController = require('../controllers/AdmController')
 const multer = require('multer')
 const usuarioLogado = require('../middlewares/usuarioLogado')
 const usuarioConectado = require('../middlewares/usuarioConectado')
+const cadastrarUsuario = require('../middlewares/cadastroMiddleware')
 const storage = multer.diskStorage(
     {   
         destination: (req, file, cb) => {cb(null, __dirname + '/../public/img')},
@@ -22,5 +23,7 @@ router.post('/pizzas/create', upload.single('img'), validarFormPizza, PizzaContr
 router.get('/login', usuarioConectado, AdmController.showLogin)
 router.post('/login', AdmController.login)
 router.get('/logout', AdmController.logout)
+router.get('/criarconta', AdmController.showCadastro)
+router.post('/criarconta', cadastrarUsuario, AdmController.cadastro)
 
 module.exports = router
