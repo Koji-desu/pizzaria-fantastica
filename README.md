@@ -1,1 +1,1 @@
-# pizzaria-fantastica
+# Pizzaria Fantastica
